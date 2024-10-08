@@ -40,6 +40,8 @@ This project focuses on predicting graduate admission outcomes for students in D
 
 git clone https://github.com/y/graduation-admission-prediction.git
 cd graduation-admission-prediction
+```
+
 
 # Project Setup and Installation Guide
 
@@ -48,6 +50,7 @@ Ensure Python 3.7+ is installed. To install the required libraries, run the foll
 
 ```bash
 pip install -r requirements.txt
+```
 
 
 
