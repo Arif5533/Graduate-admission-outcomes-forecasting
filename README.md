@@ -37,6 +37,9 @@ This project focuses on predicting graduate admission outcomes for students in D
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/graduation-admission-prediction.git
+
+git clone https://github.com/y/graduation-admission-prediction.git
 cd graduation-admission-prediction
+
+
 
