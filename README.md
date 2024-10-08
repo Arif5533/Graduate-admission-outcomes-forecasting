@@ -106,8 +106,7 @@ data_scaled = pd.DataFrame(scaled_features, columns=data.columns[:-1])
 data_scaled['Admission Status'] = data['Admission Status']
 
 ```
-#Exploratory Data Analysis
--** To visualize the distribution of selected features, the following code generates histograms:
+Exploratory Data Analysis : To visualize the distribution of selected features, the following code generates histograms:
 
 ```bash
 import matplotlib.pyplot as plt
