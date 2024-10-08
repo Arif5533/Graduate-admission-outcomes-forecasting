@@ -70,7 +70,7 @@ pip install -r requirements.txt
 # Data and Preprocessing
 
 ## Dataset Overview
-The dataset is named `trial.csv` and contains the following features:
+The dataset is named `trial-2.csv` and contains the following features:
 
 - **GRE Score**
 - **Toefl Score**
@@ -91,7 +91,7 @@ The dataset is named `trial.csv` and contains the following features:
 import pandas as pd
 
 # Load the dataset
-data = pd.read_csv('data/trial.csv')
+data = pd.read_csv('data/trial-2.csv')
 
 # Handle missing values
 data.fillna(method='ffill', inplace=True)
