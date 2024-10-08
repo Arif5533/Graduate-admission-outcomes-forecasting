@@ -227,7 +227,7 @@ The following evaluation metrics were obtained for the Random Forest and SVM mod
 - **Recall:** 0.77
 - **F1 Score:** 0.78
 ### Recurrent Neural Network (RNN)
-- **Accuracy: 86%
+- **Accuracy:** 86%
 
 Both models performed well in predicting the admission status of students based on their academic metrics.
 
