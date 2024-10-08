@@ -23,7 +23,7 @@
 - [Ethical Considerations](#ethical-considerations)
 - [References](#references)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
@@ -298,9 +298,6 @@ We are committed to ensuring that our predictive models do not reinforce existin
 
 Contributions are welcome! Please submit a pull request or open an issue for discussion.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 
 
