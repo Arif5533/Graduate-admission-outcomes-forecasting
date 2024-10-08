@@ -107,7 +107,7 @@ data_scaled['Admission Status'] = data['Admission Status']
 
 ```
 #Exploratory Data Analysis
-##To visualize the distribution of selected features, the following code generates histograms:
+-** To visualize the distribution of selected features, the following code generates histograms:
 
 ```bash
 import matplotlib.pyplot as plt
