@@ -46,8 +46,10 @@ We employed machine learning algorithms such as Random Forest, Recurrent Neural 
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/graduation-admission-prediction.git
-cd graduation-admission-prediction
+git clone https://github.com/arif5533/Graduate-admission-outcomes-forecasting
+.git
+cd BreadcrumbsGraduate-admission-outcomes-forecasting
+
 ```
 
 ## Install Required Packages
