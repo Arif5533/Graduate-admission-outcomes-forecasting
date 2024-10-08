@@ -85,7 +85,53 @@ The dataset is named `trial.csv` and contains the following features:
 1. **Handling Missing Values**: Fill missing values using forward fill.
 2. **Encoding Categorical Variables**: Use one-hot encoding for categorical variables like `Department`.
 3. **Feature Scaling**: Normalize features to ensure consistent scaling across the dataset.
+```bash
+import pandas as pd
 
+# Load the dataset
+data = pd.read_csv('data/trial.csv')
+
+# Handle missing values
+data.fillna(method='ffill', inplace=True)
+
+# One-hot encoding for categorical variables
+data = pd.get_dummies(data, columns=['Department'], drop_first=True)
+
+# Feature scaling
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(data.drop('Admission Status', axis=1))
+data_scaled = pd.DataFrame(scaled_features, columns=data.columns[:-1])
+data_scaled['Admission Status'] = data['Admission Status']
+
+```
+#Exploratory Data Analysis
+##To visualize the distribution of selected features, the following code generates histograms:
+
+```bash
+import matplotlib.pyplot as plt
+
+selected_features = ['GRE Score', 'Toefl Score', 'CGPA', 'Research Papers', 'Projects', 'Work Experience', 'University Ranking']
+
+# Strip whitespace from column names
+data.columns = data.columns.str.strip()
+
+# Create subplots for histograms
+fig, axes = plt.subplots(nrows=2, ncols=4, figsize=(15, 8))
+axes = axes.flatten()
+
+# Plot histograms for selected features
+for i, feature in enumerate(selected_features):
+    data[feature].plot(kind='hist', ax=axes[i], bins=20, edgecolor='black', color='skyblue')
+    axes[i].set_title(f'Histogram of {feature}')
+    axes[i].set_xlabel(feature)
+    axes[i].set_ylabel('Frequency')
+
+plt.tight_layout()
+plt.show()
+
+```
 
 
 
