@@ -1,4 +1,4 @@
-# Summary: Graduate-admission-outcomes-forecasting - Reserach Project
+# Graduate-admission-outcomes-forecasting - Reserach Project
 
 
 
