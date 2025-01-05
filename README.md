@@ -118,11 +118,11 @@ selected_features = ['GRE Score', 'Toefl Score', 'CGPA', 'Research Papers', 'Pro
 # Strip whitespace from column names
 data.columns = data.columns.str.strip()
 
-# Create subplots for histograms
+
 fig, axes = plt.subplots(nrows=2, ncols=4, figsize=(15, 8))
 axes = axes.flatten()
 
-# Plot histograms for selected features
+
 for i, feature in enumerate(selected_features):
     data[feature].plot(kind='hist', ax=axes[i], bins=20, edgecolor='black', color='skyblue')
     axes[i].set_title(f'Histogram of {feature}')
@@ -142,19 +142,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-# Split the dataset
+
 X = data_scaled.drop('Admission Status', axis=1)
 y = data_scaled['Admission Status']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Train the Random Forest model
+
 model_rf = RandomForestClassifier(n_estimators=100, random_state=42)
 model_rf.fit(X_train, y_train)
 
-# Make predictions
+
 y_pred_rf = model_rf.predict(X_test)
 
-# Evaluate the model
+
 print(classification_report(y_test, y_pred_rf))
 
 ```
@@ -163,14 +163,14 @@ print(classification_report(y_test, y_pred_rf))
 ```bash
 from sklearn.svm import SVC
 
-# Train the SVM model
+
 model_svm = SVC(kernel='linear', random_state=42)
 model_svm.fit(X_train, y_train)
 
-# Make predictions
+
 y_pred_svm = model_svm.predict(X_test)
 
-# Evaluate the model
+
 print(classification_report(y_test, y_pred_svm))
 
 ```
@@ -182,27 +182,27 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, SimpleRNN
 from sklearn.preprocessing import LabelBinarizer
 
-# Prepare data for RNN
+
 X_rnn = np.array(X_train).reshape(X_train.shape[0], X_train.shape[1], 1)
 y_rnn = LabelBinarizer().fit_transform(y_train)
 
-# Define the RNN model
+
 model_rnn = Sequential()
 model_rnn.add(SimpleRNN(50, activation='relu', input_shape=(X_rnn.shape[1], 1)))
 model_rnn.add(Dense(1, activation='sigmoid'))
 
-# Compile the model
+
 model_rnn.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# Train the model
+
 model_rnn.fit(X_rnn, y_rnn, epochs=50, batch_size=32)
 
-# Prepare the test data
+
 X_test_rnn = np.array(X_test).reshape(X_test.shape[0], X_test.shape[1], 1)
 y_pred_rnn = model_rnn.predict(X_test_rnn)
 y_pred_rnn = (y_pred_rnn > 0.5).astype(int)
 
-# Evaluate the RNN model
+
 print(classification_report(y_test, y_pred_rnn))
 
 ```
